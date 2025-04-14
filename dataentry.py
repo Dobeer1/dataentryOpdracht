@@ -19,10 +19,8 @@ def main():
 
     uren = bereken_uren(starttijd, eindtijd)
 
-    # Rij met data
     rij = [naam, datum, starttijd, eindtijd, uren, omschrijving]
 
-    # Bestand aanmaken of toevoegen
     bestandsnaam = "urenregistratie.csv"
     bestand_bestaat = False
 
@@ -35,7 +33,6 @@ def main():
     with open(bestandsnaam, 'a', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         if not bestand_bestaat:
-            # Schrijf header
             writer.writerow(["Naam", "Datum", "Starttijd", "Eindtijd", "Aantal uren", "Omschrijving"])
         writer.writerow(rij)
 
